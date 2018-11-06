@@ -1,11 +1,27 @@
 <% include partials/header %>
 
-<h1>Search For A Movie</h1>
+
+<div class="container">
+    <div class= "header">
+        <h1> Movie Search App</h1>
+        <h6>a simple web application utilizing OMDB api</h6>
+    </div>
+<div class="subheader">
+<h2>Search For A Movie</h2>
+</div>
+</div>
+
+<div class="container">
+    <div class="form-group">
+        
+    
 
 <form action="/results" method="get">
     <input type="text" name="search" value="" placeholder="search term">        
     <input type="submit" name="" value="submit" >
     
 </form>
+</div>
+</div>
 
 <% include partials/footer %>

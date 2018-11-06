@@ -1,6 +1,8 @@
 <% include partials/header %>
 
-<h1>Results Page</h1>
+<h1>Results Page</h1> 
+
+<br>
 
 <% data["Search"].forEach(function(movie) { %>
    <li>
@@ -10,6 +12,11 @@
 <% }) %>
 
 <br>
-<a href="/">Search Again</a>
+<div class="text-center">
+<a href="/"><button type="button"class="btn btn-primary">Search Again</button></a>
+</div>
+
+<br>
+
 
 <% include partials/footer %>
