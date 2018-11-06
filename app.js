@@ -2,10 +2,18 @@ var express = require("express");
 var app = express();
 var request = require("request");
 app.set("view engine", "ejs");
+app.use(express.static("public"));
 
+app.get("/",function(req,res){
+    res.render("search");
+})
 
 app.get("/results",function(req,res){
-    request("http://www.omdbapi.com/?s=spiderman&apikey=thewdb",function(error,response,body){
+    var query =req.query.search;
+    var url = "http://www.omdbapi.com/?s="+query;
+    var api_key = "&apikey=thewdb";
+
+    request(url+api_key,function(error,response,body){
         if(!error && response.statusCode == 200){
             let data = JSON.parse(body)
             res.render("results", { data: data});
